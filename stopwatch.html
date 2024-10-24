@@ -18,6 +18,7 @@
         $(document).ready(function() {
             var seconds = "00";
             var tens = "00";
+            var interval;
 
             //modify these
             var $appendTens = $("#tens");
@@ -30,7 +31,6 @@
             $appendSeconds.html(seconds);
 
             //button functionality
-
             $buttonStart.on("click", function() {
                 clearInterval(interval);
                     interval = setInterval(startTimer, 10);
@@ -48,44 +48,7 @@
                 $appendSeconds.html(seconds);
             });
 
-
-                /*$("#button-start").on("click", function() {
-                    clearInterval(interval);
-                    interval = setInterval(startTimer, 10);
-                });
-
-                $("#button-stop").on("click", function() {
-                    clearInterval(interval);
-                })
-
-                $("#button-reset").on("click", function() {
-                    clearInterval(interval);
-                    tens = "00";
-                    seconds = "00";
-                    appendTens.innerHTML = tens;
-                    appendSeconds.innerHTML = seconds;
-                });*/
-
-
-            var interval;
-
-            /*buttonStart.onclick = function () {
-                clearInterval(interval);
-                interval = setInterval(startTimer, 10);
-            }*/
-
-            /*buttonStop.onclick = function () {
-                clearInterval(interval);
-            }*/
-
-            /*buttonReset.onclick = function () {
-                clearInterval(interval);
-                tens = "00";
-                seconds = "00";
-                appendTens.innerHTML = tens;
-                appendSeconds.innerHTML = seconds;
-            }*/
-
+            //timer
             function startTimer() {
                 tens++;
 
