@@ -20,11 +20,12 @@
             var tens = "00";
 
             //modify these
-            var appendTens = document.getElementById("tens")
-            var appendSeconds = document.getElementById("seconds")
-            var buttonStart = document.getElementById('button-start');
-            var buttonStop = document.getElementById('button-stop');
-            var buttonReset = document.getElementById('button-reset');
+            var $appendTens = $("#tens");
+            var $appendSeconds = $("#seconds");
+            var $buttonStart = $("#button-start");
+            var $buttonStop = $("#button-stop");
+            var $buttonReset = $("#button-reset");
+
 
             $(document).ready(function() {
                 //jquery versions
@@ -43,7 +44,7 @@
                     interval = setInterval(startTimer, 10);
                 });
 
-                $("button-stop").on("click", function() {
+                $("#button-stop").on("click", function() {
                     clearInterval(interval);
                 })
 
