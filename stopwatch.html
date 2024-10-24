@@ -15,7 +15,7 @@
     </script>
 
     <script>
-        window.onload = function () {
+        $(document).ready(function() {
             var seconds = "00";
             var tens = "00";
 
@@ -26,14 +26,6 @@
             var $buttonStop = $("#button-stop");
             var $buttonReset = $("#button-reset");
 
-
-            $(document).ready(function() {
-                //jquery versions
-                let $appendTens = jQuery(document.getElementById("tens"));
-                let $appendSeconds = jQuery(document.getElementById("seconds"));
-                let $buttonStart = jQuery(document.getElementById("button-start"));
-                let $buttonStop = jQuery(document.getElementById("button-stop"));
-                let $buttonReset = jQuery(document.getElementById("button-reset"));
 
                 //button functionality
 
@@ -120,7 +112,7 @@
                     appendSeconds.innerHTML = seconds;
                 }
             }
-        }
+        });
     </script>
 </head>
 
