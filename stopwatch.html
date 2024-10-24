@@ -35,11 +35,30 @@
                 let $buttonStop = jQuery(document.getElementById("button-stop"));
                 let $buttonReset = jQuery(document.getElementById("button-reset"));
 
-                $("#tens");
+                //button functionality
 
-                $("#seconds");
+                $buttonStart.on("click", function() {
+                    clearInterval(interval);
+                    interval = setInterval(startTimer, 10);
+                });
 
-                $("#button-start").on("click", function() {
+                $buttonStop.on("click", function() {
+                    clearInterval(interval);
+                });
+
+                $buttonReset.on("click", function() {
+                    clearInterval(interval);
+                    tens = "00";
+                    seconds = "00";
+                    $appendTens.html(tens);
+                    $appendSeconds.html(seconds);
+                });
+
+                $appendTens.html(tens);
+                $appendSeconds.html(seconds);
+
+
+                /*$("#button-start").on("click", function() {
                     clearInterval(interval);
                     interval = setInterval(startTimer, 10);
                 });
@@ -54,7 +73,7 @@
                     seconds = "00";
                     appendTens.innerHTML = tens;
                     appendSeconds.innerHTML = seconds;
-                });
+                });*/
 
             });
 
