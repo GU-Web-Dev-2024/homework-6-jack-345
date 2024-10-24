@@ -26,28 +26,27 @@
             var $buttonStop = $("#button-stop");
             var $buttonReset = $("#button-reset");
 
+            $appendTens.html(tens);
+            $appendSeconds.html(seconds);
 
-                //button functionality
+            //button functionality
 
-                $buttonStart.on("click", function() {
-                    clearInterval(interval);
+            $buttonStart.on("click", function() {
+                clearInterval(interval);
                     interval = setInterval(startTimer, 10);
                 });
 
-                $buttonStop.on("click", function() {
-                    clearInterval(interval);
-                });
+            $buttonStop.on("click", function() {
+                clearInterval(interval);
+            });
 
-                $buttonReset.on("click", function() {
-                    clearInterval(interval);
-                    tens = "00";
-                    seconds = "00";
-                    $appendTens.html(tens);
-                    $appendSeconds.html(seconds);
-                });
-
+            $buttonReset.on("click", function() {
+                clearInterval(interval);
+                tens = "00";
+                seconds = "00";
                 $appendTens.html(tens);
                 $appendSeconds.html(seconds);
+            });
 
 
                 /*$("#button-start").on("click", function() {
@@ -67,7 +66,6 @@
                     appendSeconds.innerHTML = seconds;
                 });*/
 
-            });
 
             var interval;
 
@@ -103,13 +101,13 @@
                 if (tens > 99) {
                     console.log("seconds");
                     seconds++;
-                    appendSeconds.innerHTML = "0" + seconds;
+                    $appendSeconds.html("0" + seconds);
                     tens = 0;
-                    appendTens.innerHTML = "0" + 0;
+                    $appendTens.innerHTML = "0" + 0;
                 }
 
                 if (seconds > 9) {
-                    appendSeconds.innerHTML = seconds;
+                    $appendSeconds.html(seconds);
                 }
             }
         });
