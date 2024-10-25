@@ -47,6 +47,36 @@ $(document).ready(function() {
         $("#seconds").parent().css("background-color", "grey").stop(true, true).css("opacity", "1.0");
     });
 
+    //timer
+    function startTimer() {
+        tens++;
+
+        if (tens < 9) {
+            $appendTens.html("0" + tens);
+        }
+
+        if (tens > 9) {
+            $appendTens.html(tens);
+
+        }
+
+        if (tens > 99) {
+            console.log("seconds");
+            seconds++;
+            $appendSeconds.html("0" + seconds);
+            tens = 0;
+            $appendTens.html("0" + 0);
+        }
+
+        if (seconds > 9) {
+            $appendSeconds.html(seconds);
+        }
+    }
+
+    function startBackgroundAnimation() {
+        $("#seconds").parent().animate({ opacity: 0.8 }, 500).animate({ opacity: 1.0 }, 500, startBackgroundAnimation);
+    }
+
     $("#seconds").parent().addClass("timer-background");
     $("#seconds").parent().css({
         "background-color": "grey",
@@ -77,34 +107,4 @@ $(document).ready(function() {
         "cursor": "pointer",
         "margin": "10px"
     });
-
-    //timer
-    function startTimer() {
-        tens++;
-
-        if (tens < 9) {
-            $appendTens.html("0" + tens);
-        }
-
-        if (tens > 9) {
-            $appendTens.html(tens);
-
-        }
-
-        if (tens > 99) {
-            console.log("seconds");
-            seconds++;
-            $appendSeconds.html("0" + seconds);
-            tens = 0;
-            $appendTens.html("0" + 0);
-        }
-
-        if (seconds > 9) {
-            $appendSeconds.html(seconds);
-        }
-    }
-
-    function startBackgroundAnimation() {
-        $("#seconds").parent().animate({ opacity: 0.8 }, 500).animate({ opacity: 1.0 }, 500, startBackgroundAnimation);
-    }
 });
