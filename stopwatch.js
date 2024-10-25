@@ -1,3 +1,9 @@
+/*
+    Name: Jack Ou
+    Class: CPSC332
+    Assignment: Homework 6 jQuery
+    Last Modified: 10/24/2024
+*/
 $(document).ready(function() {
     var seconds = "00";
     var tens = "00";
@@ -42,8 +48,9 @@ $(document).ready(function() {
     $buttonStop.on("click", function() {
         clearInterval(interval);
         //style manipulation
-        $("#seconds").parent().css("background-color", "rgb(251, 18, 47)");
-
+        if (seconds !== "00" || tens !== "00") {
+            $("#seconds").parent().css("background-color", "rgb(251, 18, 47)"); // Red when paused
+        }
     });
 
     $buttonReset.on("click", function() {
