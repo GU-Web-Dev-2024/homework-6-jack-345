@@ -9,9 +9,6 @@ $(document).ready(function() {
     var tens = "00";
     var interval;
 
-    /*$("#timer").addClass("timer-background");
-    $("#timer").css("background-color", "grey");*/
-
     //modify these
     var $appendTens = $("#tens");
     var $appendSeconds = $("#seconds");
@@ -28,7 +25,7 @@ $(document).ready(function() {
         interval = setInterval(startTimer, 10);
         //style manipulation
         $("#seconds").parent().css("background-color", "rgb(51, 165, 50)");
-
+        startBackgroundAnimation();
         });
 
     $buttonStop.on("click", function() {
@@ -37,6 +34,7 @@ $(document).ready(function() {
         if (seconds !== "00" || tens !== "00") {
             $("#seconds").parent().css("background-color", "rgb(251, 18, 47)"); // Red when paused
         }
+        $("#seconds").parent().stop(true, true).css("opacity", "1.0");
     });
 
     $buttonReset.on("click", function() {
@@ -46,11 +44,14 @@ $(document).ready(function() {
         $appendTens.html(tens);
         $appendSeconds.html(seconds);
         //style manipulation
-        $("#seconds").parent().css("background-color", "grey").stop(true, true).css("opacity", 1);
+        $("#seconds").parent().css("background-color", "grey").stop(true, true).css("opacity", "1.0");
     });
 
     $("#seconds").parent().addClass("timer-background");
-    $("#seconds").parent().css("background-color", "grey");
+    $("#seconds").parent().css({
+        "background-color": "grey",
+        "opacity": "1"
+    });
 
     $("#button-start, #button-stop, #button-reset").addClass("button-style");
     $(".button-style").css({
@@ -87,5 +88,9 @@ $(document).ready(function() {
         if (seconds > 9) {
             $appendSeconds.html(seconds);
         }
+    }
+
+    function startBackgroundAnimation() {
+        $("#seconds").parent().animate({ opacity: 0.8 }, 500).animate({ opacity: 1.0 }, 500, startBackgroundAnimation);
     }
 });
