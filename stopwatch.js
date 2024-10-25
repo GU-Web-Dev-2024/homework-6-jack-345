@@ -53,6 +53,20 @@ $(document).ready(function() {
         "opacity": "1"
     });
 
+    $("#seconds").parent().css({
+        "border": "5px solid black",  // Outer border
+        "border-radius": "10px",  // Rounded corners for outer border
+        "background-color": "#f0f0f0",  // Inner background
+        "padding": "15px"  // Padding around the text
+    });
+
+    $("#seconds, #tens").css({
+        "font-family": "'Courier New', Courier, monospace",  // Font family
+        "font-size": "36px",  // Font size
+        "color": "#333",  // Text color
+        "font-weight": "bold"  // Bold text
+    });
+
     $("#button-start, #button-stop, #button-reset").addClass("button-style");
     $(".button-style").css({
         "border": "2px solid black",
