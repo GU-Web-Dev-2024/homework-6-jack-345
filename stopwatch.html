@@ -20,8 +20,11 @@
             var tens = "00";
             var interval;
 
-            $("#timer").addClass("timer-background");
-            $("#timer").css("background-color", "grey");
+            /*$("#timer").addClass("timer-background");
+            $("#timer").css("background-color", "grey");*/
+
+            $("#seconds").parent().addClass("timer-background");
+            $("#seconds").parent().css("background-color", "grey");
 
             //modify these
             var $appendTens = $("#tens");
@@ -38,14 +41,14 @@
                 clearInterval(interval);
                 interval = setInterval(startTimer, 10);
                 //style manipulation
-                $("#timer").css("background-color", "rgb(51, 165, 50)");
+                $("#seconds").parent().css("background-color", "rgb(51, 165, 50)");
 
                 });
 
             $buttonStop.on("click", function() {
                 clearInterval(interval);
                 //style manipulation
-                $("#timer").css("background-color", "rgb(251, 18, 47)");
+                $("#seconds").parent().css("background-color", "rgb(251, 18, 47)");
 
             });
 
@@ -56,7 +59,7 @@
                 $appendTens.html(tens);
                 $appendSeconds.html(seconds);
                 //style manipulation
-                $("#timer").css("background-color", "grey").stop(true, true).css("opacity", 1);
+                $("#seconds").parent().css("background-color", "grey").stop(true, true).css("opacity", 1);
             });
 
             //timer
