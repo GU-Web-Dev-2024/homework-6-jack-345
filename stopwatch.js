@@ -9,6 +9,17 @@ $(document).ready(function() {
     $("#seconds").parent().addClass("timer-background");
     $("#seconds").parent().css("background-color", "grey");
 
+    $("#button-start, #button-stop, #button-reset").addClass("button-style");
+    $(".button-style").css({
+        "border": "2px solid black",
+        "background-color": "lightblue",
+        "font-size": "16px",
+        "padding": "10px 20px",
+        "border-radius": "5px",
+        "cursor": "pointer",
+        "margin": "10px"
+    });
+
     //modify these
     var $appendTens = $("#tens");
     var $appendSeconds = $("#seconds");
